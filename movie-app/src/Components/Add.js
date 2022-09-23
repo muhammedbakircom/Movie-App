@@ -32,9 +32,9 @@ function Add() {
             alt=""
           />
           <div className="title">
-            <h1>Hoş Geldiniz</h1>
+            <h1>Hoş Geldiniz !!!</h1>
             <h2>
-              Milyonlarca film, TV şovu ve keşfedilecek kişi. Şimdi Keşfedin
+              Milyonlarca film ve TV şovu. Şimdi Keşfedin !
             </h2>
           </div>
           <div className="input-wrapper">
