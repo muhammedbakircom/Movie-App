@@ -1,7 +1,6 @@
 import React from 'react'
 
 function ResultCart({result}) {
-    console.log(result);
 
   return (
     <div className='result-card'>

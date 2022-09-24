@@ -1,9 +1,10 @@
-/* eslint-disable no-unused-expressions */
-import React from "react";
-import { useState } from "react";
+import { useState,useContext } from "react";
+import { GlobalContext } from "../Context/GlobalState";
 import ResultCart from "./ResultCart";
 
 function Add() {
+  const { barbaros } = useContext(GlobalContext);
+
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
@@ -31,11 +32,12 @@ function Add() {
             src="https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/9ZyAUZrfccsjtDwYgc7yvOBnqM9.jpg"
             alt=""
           />
-          <div className="title">
+          <div className="titles">
             <h1>Hoş Geldiniz !!!</h1>
             <h2>
               Milyonlarca film ve TV şovu. Şimdi Keşfedin !
             </h2>
+            <h1>{barbaros}</h1>
           </div>
           <div className="input-wrapper">
             <input
