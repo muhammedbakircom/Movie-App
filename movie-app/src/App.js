@@ -5,9 +5,11 @@ import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import Watchlist from './Components/Watchlist';
 import Watched from './Components/Watched';
 import Add from './Components/Add';
+import { GlobalProvider } from './Context/GlobalState';
 
 function App() {
   return (
+    <GlobalProvider>
     <Router>
       <Header />
       <Routes>
@@ -16,6 +18,7 @@ function App() {
         <Route path="/add" element={<Add />} />
       </Routes>
     </Router>
+    </GlobalProvider>
     );
 }
 
