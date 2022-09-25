@@ -1,11 +1,13 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import AppReducer from "./AppReducer";
 
 // create context
 export const GlobalContext = createContext();
 
 const initialState = {
-    watchlist : [],
+    watchlist : localStorage.getItem("watchlist")
+    ? JSON.parse(localStorage.getItem("watchlist"))
+    : [],
     watched : []
 }
 
@@ -13,14 +15,29 @@ const initialState = {
 export const GlobalProvider = (props) => {
     const[state,dispatch] = useReducer(AppReducer,initialState);
 
+    useEffect(() => {
+      localStorage.setItem("watchlist", JSON.stringify(state.watchlist))
+    }, [state])
+
     const addMovieToWatchlist = (result) => {
         dispatch({type : "ADD_MOVİE_TO_WATCHLIST", payload:result})
+    }
+
+    const removeMovieToWatchlist = (id) => {
+        dispatch({type : "REMOVE_MOVİE_TO_WATCHLIST",payload:id})
+    }
+
+    const addMovieToWatched = (movie) => {
+        dispatch({type : "ADD_MOVİE_TO_WATCHED" , payload:movie})
     }
 
   return (
     <GlobalContext.Provider value={{
       watchlist : state.watchlist,
-      addMovieToWatchlist }}>
+      watched : state.watched,
+      addMovieToWatchlist,
+      removeMovieToWatchlist,
+      addMovieToWatched, }}>
       {props.children}
     </GlobalContext.Provider>
   );
