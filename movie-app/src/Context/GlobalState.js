@@ -12,9 +12,15 @@ const initialState = {
 //create provider components
 export const GlobalProvider = (props) => {
     const[state,dispatch] = useReducer(AppReducer,initialState);
-    console.log(state);
+
+    const addMovieToWatchlist = (result) => {
+        dispatch({type : "ADD_MOVİE_TO_WATCHLIST", payload:result})
+    }
+
   return (
-    <GlobalContext.Provider value={{ barbaros: "developer" }}>
+    <GlobalContext.Provider value={{
+      watchlist : state.watchlist,
+      addMovieToWatchlist }}>
       {props.children}
     </GlobalContext.Provider>
   );
