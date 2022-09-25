@@ -1,10 +1,7 @@
-import { useState,useContext } from "react";
-import { GlobalContext } from "../Context/GlobalState";
+import { useState } from "react";
 import ResultCart from "./ResultCart";
 
 function Add() {
-  const { barbaros } = useContext(GlobalContext);
-
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
@@ -34,10 +31,7 @@ function Add() {
           />
           <div className="titles">
             <h1>Hoş Geldiniz !!!</h1>
-            <h2>
-              Milyonlarca film ve TV şovu. Şimdi Keşfedin !
-            </h2>
-            <h1>{barbaros}</h1>
+            <h2>Milyonlarca film ve TV şovu. Şimdi Keşfedin !</h2>
           </div>
           <div className="input-wrapper">
             <input
