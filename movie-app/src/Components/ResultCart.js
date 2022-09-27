@@ -33,12 +33,11 @@ function ResultCart({ result }) {
         </div>
         <div className="controls">
           <button className="btn" disabled={storedMovie} onClick={() => addMovieToWatchlist(result)}>
-            Add to watchlist
+            İzlenecekler <br/> Listesine Ekle
           </button>
           <button className="btn" disabled={storedMovieWatched} onClick={() => addMovieToWatched(result)}>
-            Add to watched
+          İzlenenler <br/> Listesine Ekle
           </button>
-
         </div>
       </div>
     </div>
