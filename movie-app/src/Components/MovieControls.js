@@ -22,8 +22,8 @@ function MovieControls({ movie, type }) {
 
 {type === "watched" && (
         <>
-          <button className="ctrl-btn" onClick={() => addMovieToWatched(movie)}>
-            <i className="fa-fw far fa-eye-slash" onClick={() => moveToWatchlist(movie)}></i>
+          <button className="ctrl-btn" onClick={() => moveToWatchlist(movie)}>
+            <i className="fa-fw far fa-eye-slash"></i>
           </button>
           <button
             className="ctrl-btn"
