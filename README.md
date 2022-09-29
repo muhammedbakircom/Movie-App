@@ -1,4 +1,4 @@
-# Movie App in React
+# Movie App
 *Movie App is a React-based web app. In this Movie Application, users offer the chance to search for the movie they want and add it to the watch list or the watched list.*
 
 # Features
